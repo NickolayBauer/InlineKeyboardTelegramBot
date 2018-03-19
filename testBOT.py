@@ -86,29 +86,6 @@ def callback_spisok(call):
 
 
 
-"""
-    config.player1 = config.spisok[int(call.data)]
-    config.name1 = call.from_user.username
-    config.id1 = call.from_user.id
-    bot.edit_message_text(chat_id=call.message.chat.id,
-                          message_id=call.message.message_id, text="ваш противник выбрал, ваша очередь",
-                          reply_markup=keyboard)
-                config.player2 = config.spisok[int(call.data)]
-                config.name2 = call.from_user.username
-                config.id2 = call.from_user.id
-                if config.id1 == config.id2:
-                    bot.answer_callback_query(callback_query_id=call.id, show_alert=True, text="ты играешь сам с собой")
-                else:
-                    config.flag = True
-
-            bot.edit_message_text(chat_id=call.message.chat.id,
-                              message_id=call.message.message_id,
-                              text=config.player1+ ' ' + config.player2 +
-                                   '\n' + magic(config.spisok.index(config.player1),
-                                                config.spisok.index(config.player2)))
-
-            config.id1 = config.id2 = config.player1 = config.player2 = ''
-"""
 
 
 if __name__ == '__main__':
