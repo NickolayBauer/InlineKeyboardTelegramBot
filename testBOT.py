@@ -73,8 +73,8 @@ def callback_inline(call):
                                        '\n' + magic(config.spisok.index(config.player1),
                                                     config.spisok.index(config.player2)))
 
-                config.player1 = config.player2 = ''
-                config.id1 = config.id2 = int
+                config.id1 = config.id2 = config.player1 = config.player2 = ''
+
 
 
 if __name__ == '__main__':
