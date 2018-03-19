@@ -32,7 +32,8 @@ def any_msg(message):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
-    # print(call.from_user.username)
+
+
     keyboard = types.InlineKeyboardMarkup()
     callback_button1 = types.InlineKeyboardButton(text="камень", callback_data="0")
     callback_button2 = types.InlineKeyboardButton(text="ножницы", callback_data="1")
@@ -54,10 +55,10 @@ def callback_inline(call):
             bot.edit_message_text(chat_id=call.message.chat.id,
                                   message_id=call.message.message_id, text="ваш противник выбрал, ваша очередь",
                                   reply_markup=keyboard)
+            
 
 
-
-        elif call.data in ["0", "1", "2"] and config.player1!= ''and config.id1 != config.id2:
+        elif call.data in ["0", "1", "2"] and config.player1!= '' and config.id1 != config.id2:
             config.player2 = config.spisok[int(call.data)]
             config.name2 = call.from_user.username
             config.id2 = call.from_user.id
@@ -65,7 +66,7 @@ def callback_inline(call):
                 bot.answer_callback_query(callback_query_id=call.id, show_alert=True, text="ты играешь сам с собой")
                 bot.edit_message_text(chat_id=call.message.chat.id,
                                       message_id=call.message.message_id, text="ваш противник выбрал, ваша очередь",
-                                      reply_markup=keyboard)
+                                      reply_markup=keyboard )
             else:
                 bot.edit_message_text(chat_id=call.message.chat.id,
                                   message_id=call.message.message_id,
